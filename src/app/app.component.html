@@ -3,6 +3,21 @@
     <button mat-button class="hamburger" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    <button mat-button *ngIf="!isLoggedIn" (click)="login(selectedUser)">LOGIN</button>
+    <button mat-button *ngIf="isLoggedIn" (click)="logout()">LOGOUT</button>
+    <!--    <mat-form-field *ngIf="!isLoggedIn">-->
+    <!--      <select matNativeControl [(ngModel)]="selectedUser" required>-->
+    <!--        <option value="1" selected>Developer</option>-->
+    <!--        <option value="2">Accountant</option>-->
+    <!--      </select>-->
+    <!--    </mat-form-field>-->
+    <mat-form-field *ngIf="!isLoggedIn">
+      <mat-select [(ngModel)]="selectedUser">
+        <mat-option *ngFor="let user of users" [value]="user.key">
+          {{user.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
 
