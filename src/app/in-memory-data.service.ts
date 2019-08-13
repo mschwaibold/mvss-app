@@ -17,9 +17,30 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 2,
         firstName: 'Max',
         lastName: 'Mustermann',
-        privileges: ['red-permission'],
+        privileges: ['green-permission', 'VehiclesView', 'CarsView'],
       }];
+    const menu = [
+      {
+        id: 1,
+        title: 'Welcome',
+      },
+      {
+        id: 2,
+        title: 'Vehicles',
+        privilege: 'VehiclesView',
+        children: [
+          {
+            title: 'Cars',
+            privilege: 'CarsView'
+          },
+          {
+            title: 'Tanks',
+            privilege: 'TanksView'
+          }
+        ]
+      }
+    ]
 
-    return { users };
+    return { users, menu };
   }
 }
