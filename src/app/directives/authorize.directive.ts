@@ -1,9 +1,7 @@
 import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { UserService } from '../_services/user.service';
-import { AuthenticatedUser } from '../_models/authenticatedUser';
 import { AuthenticationService } from '../_services/authentication.service';
 
 @Directive({
@@ -17,7 +15,6 @@ export class AuthorizeDirective implements OnInit, OnDestroy {
 
   @Input()
   public set appAuthorize(value: string) {
-    // console.log(value);
     this.privilege = value;
   }
 
@@ -34,7 +31,6 @@ export class AuthorizeDirective implements OnInit, OnDestroy {
 
   setNgIf() {
     this.ngIfDirective.ngIf = this.userService.hasPrivilege(this.authenticationService.currentUserValue, this.privilege);
-    // console.log('Privilege: ' + this.privilege);
   }
 
   ngOnInit(): void {

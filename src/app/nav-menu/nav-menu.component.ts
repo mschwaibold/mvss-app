@@ -1,23 +1,21 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationNode } from '../_models/navigationNode';
 import { MatMenu } from '@angular/material';
-import { NavItem } from '../_models/nav-item';
 
 @Component({
-  selector: 'app-menu-item',
-  templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.scss']
+  selector: 'app-nav-menu',
+  templateUrl: './nav-menu.component.html',
+  styleUrls: ['./nav-menu.component.scss']
 })
-export class MenuItemComponent implements OnInit {
+export class NavMenuComponent implements OnInit {
 
-  @Input() items: NavItem[];
+  @Input() items: NavigationNode[];
   @ViewChild('childMenu', { static: true }) public childMenu: MatMenu;
 
   constructor() {
   }
 
   ngOnInit() {
-    console.log(JSON.stringify(this.items));
   }
 
 }

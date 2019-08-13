@@ -15,28 +15,6 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<app-menu-item #mainMenu [items]="navItems"></app-menu-item>
-
-<!--<mat-menu #mainMenu="matMenu" [overlapTrigger]="false">-->
-
-<!--  <ng-container *ngFor="let child of navItems">-->
-<!--    &lt;!&ndash; Handle branch node menu items &ndash;&gt;-->
-<!--    <ng-container *ngIf="child.children && child.children.length > 0">-->
-<!--      <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu">-->
-<!--        <mat-icon>{{child.iconName}}</mat-icon>-->
-<!--        <span>{{child.displayName}}</span>-->
-<!--      </button>-->
-<!--      <app-menu-item #menu [items]="child.children"></app-menu-item>-->
-<!--    </ng-container>-->
-<!--    &lt;!&ndash; Handle leaf node menu items &ndash;&gt;-->
-<!--    <ng-container *ngIf="!child.children || child.children.length === 0">-->
-<!--      <button mat-menu-item [routerLink]="child.route">-->
-<!--        <mat-icon>{{child.iconName}}</mat-icon>-->
-<!--        <span>{{child.displayName}}</span>-->
-<!--      </button>-->
-<!--    </ng-container>-->
-<!--  </ng-container>-->
-
-<!--</mat-menu>-->
+<app-nav-menu #mainMenu [items]="menuNodes | async"></app-nav-menu>
 
 <router-outlet></router-outlet>

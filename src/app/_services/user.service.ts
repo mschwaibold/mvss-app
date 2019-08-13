@@ -13,7 +13,6 @@ export class UserService {
   }
 
   hasPrivilege(user: AuthenticatedUser, privilege: string): boolean {
-    console.log(`{User has privilege ${privilege}: ${!privilege || !!user && (this.isDeveloper(user) || user.privileges.includes(privilege))}`);
     return !privilege || !!user && (this.isDeveloper(user) || user.privileges.includes(privilege));
   }
 }

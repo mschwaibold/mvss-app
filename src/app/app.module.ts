@@ -11,14 +11,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { FormsModule } from '@angular/forms';
-import { MenuItemComponent } from './menu-item/menu-item.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { CarsComponent } from './cars/cars.component';
+import { TanksComponent } from './tanks/tanks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AuthorizeDirective,
-    MenuItemComponent
+    NavMenuComponent,
+    CarsComponent,
+    TanksComponent
   ],
   imports: [
     BrowserModule,

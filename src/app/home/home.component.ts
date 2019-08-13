@@ -9,26 +9,13 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  private subscription = new Subscription();
-  public isLoggedIn = false;
-
-  constructor(private authenticationService: AuthenticationService) {
-    this.subscription.add(authenticationService.currentUser.subscribe(u => this.isLoggedIn = !!u ));
-  }
-
-  login(userId: number): void {
-    this.authenticationService.login(userId);
-  }
-
-  logout(): void {
-    this.authenticationService.logout();
+  constructor() {
   }
 
   ngOnInit() {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
 }

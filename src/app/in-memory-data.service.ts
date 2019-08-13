@@ -23,6 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 1,
         title: 'Welcome',
+        url: 'home'
       },
       {
         id: 2,
@@ -31,15 +32,17 @@ export class InMemoryDataService implements InMemoryDbService {
         children: [
           {
             title: 'Cars',
+            url: 'cars',
             privilege: 'CarsView'
           },
           {
             title: 'Tanks',
+            url: 'tanks',
             privilege: 'TanksView'
           }
         ]
       }
-    ]
+    ];
 
     return { users, menu };
   }
