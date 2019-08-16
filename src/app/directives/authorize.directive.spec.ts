@@ -2,7 +2,8 @@ import { AuthorizeDirective } from './authorize.directive';
 
 describe('AuthorizeDirective', () => {
   it('should create an instance', () => {
-    const directive = new AuthorizeDirective();
-    expect(directive).toBeTruthy();
+    // const directive = new AuthorizeDirective();
+    // expect(directive).toBeTruthy();
+    expect(false).toBeTruthy();
   });
 });
