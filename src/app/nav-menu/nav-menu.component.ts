@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationNode } from '../_models/navigationNode';
-import { MatMenu } from '@angular/material';
+import { MatMenu } from '@angular/material/menu';
 
 @Component({
   selector: 'app-nav-menu',
